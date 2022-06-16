@@ -1,5 +1,6 @@
 # Ecommerce
 Entities: Product -> Brands -> Items
+
 Relation : 
 	1. Product -> Brands : 1 Product have many Brands
 	2. Brands -> Items : 1 Brand have many Items
