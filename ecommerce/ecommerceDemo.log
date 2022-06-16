@@ -1,0 +1,56 @@
+2022-06-08 10:59:03,451 INFO com.project.ecommerce.EcommerceApplication [main] Starting EcommerceApplication using Java 16.0.1 on dell-Inspiron-15-3567 with PID 3669 (/home/dell/eclipse-workspace/ecommerce/target/classes started by dell in /home/dell/eclipse-workspace/ecommerce)
+2022-06-08 10:59:03,523 INFO com.project.ecommerce.EcommerceApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-06-08 10:59:15,344 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-06-08 10:59:15,345 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-06-08 10:59:15,705 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-06-08 10:59:16,456 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-06-08 10:59:16,494 WARN com.zaxxer.hikari.util.DriverDataSource [main] Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2022-06-08 10:59:21,364 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-06-08 10:59:22,074 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-08 10:59:22,755 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-06-08 10:59:23,442 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-08 10:59:24,089 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2022-06-08 10:59:28,208 INFO org.hibernate.tuple.PojoInstantiator [main] HHH000182: No default (no-argument) constructor for class: com.project.ecommerce.dto.ProductDto (class must be instantiated by Interceptor)
+2022-06-08 10:59:32,674 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-08 10:59:38,533 INFO com.project.ecommerce.EcommerceApplication [main] Started EcommerceApplication in 38.956 seconds (JVM running for 41.892)
+2022-06-08 11:00:02,214 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-06-08 11:00:02,550 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-06-08 11:00:18,383 INFO com.project.ecommerce.EcommerceApplication [main] Starting EcommerceApplication using Java 16.0.1 on dell-Inspiron-15-3567 with PID 3801 (/home/dell/eclipse-workspace/ecommerce/target/classes started by dell in /home/dell/eclipse-workspace/ecommerce)
+2022-06-08 11:00:18,393 INFO com.project.ecommerce.EcommerceApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-06-08 11:00:23,398 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-06-08 11:00:23,398 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-06-08 11:00:23,712 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-06-08 11:00:24,098 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-06-08 11:00:24,145 WARN com.zaxxer.hikari.util.DriverDataSource [main] Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2022-06-08 11:00:26,438 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-06-08 11:00:28,238 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-08 11:00:28,801 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-06-08 11:00:29,443 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-08 11:00:29,887 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2022-06-08 11:00:31,520 INFO org.hibernate.tuple.PojoInstantiator [main] HHH000182: No default (no-argument) constructor for class: com.project.ecommerce.dto.ProductDto (class must be instantiated by Interceptor)
+2022-06-08 11:00:32,115 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-08 11:00:36,982 INFO com.project.ecommerce.EcommerceApplication [main] Started EcommerceApplication in 20.235 seconds (JVM running for 22.484)
+2022-06-08 11:02:30,545 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-08 11:05:04,407 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-06-08 11:05:04,416 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-06-08 11:05:35,565 INFO com.project.ecommerce.EcommerceApplication [main] Starting EcommerceApplication using Java 16.0.1 on dell-Inspiron-15-3567 with PID 4155 (/home/dell/eclipse-workspace/ecommerce/target/classes started by dell in /home/dell/eclipse-workspace/ecommerce)
+2022-06-08 11:05:35,588 INFO com.project.ecommerce.EcommerceApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-06-08 11:05:43,525 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-06-08 11:05:43,526 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-06-08 11:05:44,754 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-06-08 11:05:46,410 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-06-08 11:05:46,541 WARN com.zaxxer.hikari.util.DriverDataSource [main] Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2022-06-08 11:05:51,915 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-06-08 11:05:55,585 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-08 11:05:56,057 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-06-08 11:05:56,599 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-08 11:05:57,007 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2022-06-08 11:05:58,092 INFO org.hibernate.tuple.PojoInstantiator [main] HHH000182: No default (no-argument) constructor for class: com.project.ecommerce.dto.ProductDto (class must be instantiated by Interceptor)
+2022-06-08 11:05:58,902 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-08 11:06:05,113 INFO com.project.ecommerce.EcommerceApplication [main] Started EcommerceApplication in 30.783 seconds (JVM running for 32.247)
+2022-06-08 11:06:41,550 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-08 11:06:51,409 INFO com.project.ecommerce.aop.LoggerAspect [http-nio-8080-exec-6] after execution of execution(List com.project.ecommerce.service.ProductService.getAll())
+2022-06-08 11:06:52,496 DEBUG org.hibernate.SQL [http-nio-8080-exec-6] select product0_.product_id as product_1_2_, product0_.product_name as product_2_2_ from product product0_
+2022-06-08 11:06:52,861 INFO com.project.ecommerce.aop.LoggerAspect [http-nio-8080-exec-6] after execution of execution(List com.project.ecommerce.service.ProductService.getAll())
+2022-06-08 11:21:27,745 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-06-08 11:21:27,890 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
