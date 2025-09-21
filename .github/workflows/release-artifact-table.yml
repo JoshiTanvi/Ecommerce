@@ -1,0 +1,110 @@
+name: Add/Replace Artifact Table in Release
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: 'Tag of release to update (optional). Leave empty to use latest release.'
+        required: false
+      dry_run:
+        description: 'true = only print table to logs (no update). false = update release body'
+        required: false
+        default: 'true'
+
+jobs:
+  update-release:
+    runs-on: ubuntu-latest
+    # permission required to update release via the REST API
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout (not strictly required, but useful if you add changes later)
+        uses: actions/checkout@v4
+
+      - name: Generate artifact table and update release notes
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const { owner, repo } = context.repo;
+            const inputs = (context.payload && context.payload.inputs) || {};
+            const releaseTag = inputs.release_tag;
+            const dryRun = (inputs.dry_run || 'true').toLowerCase() === 'true';
+
+            // Helper to format bytes -> human readable
+            function humanFileSize(bytes) {
+              const thresh = 1024;
+              if (Math.abs(bytes) < thresh) return bytes + ' B';
+              const units = ['KB','MB','GB','TB'];
+              let u = -1;
+              do {
+                bytes = bytes / thresh;
+                u++;
+              } while (Math.abs(bytes) >= thresh && u < units.length - 1);
+              return bytes.toFixed(1) + ' ' + units[u];
+            }
+
+            // Resolve release to operate on
+            let release;
+            if (context.eventName === 'release' && context.payload && context.payload.release) {
+              // triggered by release event
+              release = context.payload.release;
+            } else {
+              // manual run: by tag if provided else latest
+              if (releaseTag) {
+                const resp = await github.rest.repos.getReleaseByTag({ owner, repo, tag: releaseTag });
+                release = resp.data;
+              } else {
+                const resp = await github.rest.repos.getLatestRelease({ owner, repo });
+                release = resp.data;
+              }
+            }
+
+            // re-fetch full release object to ensure we have all fields
+            release = (await github.rest.repos.getRelease({ owner, repo, release_id: release.id })).data;
+            const assets = release.assets || [];
+
+            // Build Markdown table (Artifact | Size | Download)
+            let table = "| Artifact | Size | Download |\n|---|---:|---|\n";
+            for (const a of assets) {
+              table += `| ${a.name} | ${humanFileSize(a.size)} | [Download](${a.browser_download_url}) |\n`;
+            }
+            if (assets.length === 0) {
+              table += "| *(no assets)* | | |\n";
+            }
+
+            // Markers to replace between
+            const startMarker = "<!-- artifacts-start -->";
+            const endMarker = "<!-- artifacts-end -->";
+
+            let body = release.body || "";
+
+            // Replace existing marker block if present, otherwise append
+            const markerRegex = new RegExp(`${startMarker}[\\s\\S]*?${endMarker}`);
+            if (markerRegex.test(body)) {
+              body = body.replace(markerRegex, `${startMarker}\n${table}${endMarker}`);
+            } else {
+              body = `${body}\n\n## Artifacts\n${startMarker}\n${table}${endMarker}`;
+            }
+
+            // Log preview (safe)
+            console.log("---- Generated artifact table ----");
+            console.log(table);
+            console.log("---- Release body preview (first 1200 chars) ----");
+            console.log(body.substring(0, 1200));
+
+            if (!dryRun) {
+              console.log("Dry run disabled — updating release...");
+              await github.rest.repos.updateRelease({
+                owner,
+                repo,
+                release_id: release.id,
+                body,
+              });
+              console.log("Release updated.");
+            } else {
+              console.log("Dry run enabled — NOT updating the release. Set dry_run=false to apply.");
+            }
